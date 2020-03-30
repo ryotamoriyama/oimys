@@ -48,7 +48,5 @@
     "node": ">=10.14.2",
     "npm": ">=6.4.1"
   },
-  "dependencies": {
-    "viewport-extra": "^1.0.4"
-  }
+  "dependencies": {}
 }

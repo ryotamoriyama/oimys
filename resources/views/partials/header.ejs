@@ -11,6 +11,9 @@
     <title><%= title %></title>
 </head>
 <body>
+<% if (process.env.NODE_ENV === 'production') { %>
+<%- include('/../../public/assets/svg/sprite.svg') -%>
+<% } %>
 <header class="header">
     <div class="header-content">
         <h1>
