@@ -1,0 +1,77 @@
+$w:375px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+}
+
+ul {
+  list-style: none;
+}
+
+svg {
+  fill: #ffffff;
+  width: 30px;
+  height: 30px;
+}
+
+.header {
+  background: #000000;
+  height: 60px;
+  color: #ffffff;
+}
+
+.header-content {
+  padding: 0 10px;
+  display: flex;
+  width: $w;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+h1 svg {
+  width: 120px;
+  height: 23.55px;
+  font-size: 1em;
+  margin-top: 18px;
+}
+
+.nav {
+  display: flex;
+}
+
+.menu-item {
+  font-size: 1em;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+.wrapper {
+  width: $w;
+  height: calc(100vh - 60px);
+  margin: 0 auto;
+  position: relative;
+}
+
+canvas {
+  width: $w;
+  height: 2472/1748*$w;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// Required
+.svg-sprite {
+  display: none;
+}
+
+#file {
+  display: none;
+}

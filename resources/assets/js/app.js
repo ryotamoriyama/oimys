@@ -1,0 +1,79 @@
+const file = document.getElementById('file');
+const canvas = document.getElementById('canvas');
+const canvasWidth = 1748;
+const canvasHeight = 2472;
+const imageMaskWidth = 1625;
+const imageMaskHeight = 2004;
+
+const img = new Image();
+let imageX = 0;
+let imageY = 0;
+let uploadImgSrc = '';
+
+const header = new Image();
+const footer = new Image();
+header.src = 'assets/images/header.png';
+footer.src = 'assets/images/footer.png';
+
+canvas.width = canvasWidth;
+canvas.height = canvasHeight;
+
+const ctx = canvas.getContext('2d');
+
+function loadLocalImage(e) {
+
+    const fileData = e.target.files[0];
+
+    if (!fileData.type.match('image.*')) {
+        alert('Only image file allowed');
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function () {
+        uploadImgSrc = reader.result;
+        canvasDraw();
+    }
+
+    reader.readAsDataURL(fileData);
+}
+
+file.addEventListener('change', loadLocalImage, false);
+
+function canvasDraw() {
+
+    ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+
+    ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+
+    ctx.drawImage(header, 61, 131)
+    ctx.drawImage(footer, 1290, 2320)
+
+    ctx.rect(61, 286, imageMaskWidth, imageMaskHeight);
+    ctx.clip();
+
+    img.src = uploadImgSrc;
+    img.onload = function () {
+        const imgWidth = this.width;
+        const imgHeight = this.height;
+        if (imgWidth / imgHeight > 0.81) {
+            imageX = (imageMaskWidth - ((imageMaskHeight / imgHeight) * imgWidth)) / 2;
+            ctx.drawImage(img, 61 + imageX, 286, (imageMaskHeight / imgHeight) * imgWidth, imageMaskHeight);
+        } else {
+            imageY = (imageMaskHeight - ((imageMaskWidth / imgWidth) * imgHeight)) / 2;
+            ctx.drawImage(img, 61 , 286 + imageY, imageMaskWidth, (imageMaskWidth / imgWidth) * imgHeight);
+        }
+        ctx.fillStyle = "white";
+        ctx.font = "14px sans-serif";
+        ctx.fillText("@ryotamoriyama", 71, 2280);
+    }
+}
+
+
+const download = document.getElementById("download");
+
+download.addEventListener('click', () => {
+    const base64 = canvas.toDataURL("image/jpeg");
+    document.getElementById("download").href = base64;
+});

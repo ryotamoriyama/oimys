@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/viewport-extra@1.0.3/dist/viewport-extra.min.js"></script>
+    <script>
+        new ViewportExtra(375)
+    </script>
+    <link rel="stylesheet" href="<%= mix('/assets/css/app.css') %>">
+    <title><%= title %></title>
+</head>
+<body>
+<header class="header">
+    <div class="header-content">
+        <h1>
+            <svg>
+                <title><%= title %></title>
+                <use xlink:href="<%= svgSprite('/assets/svg/sprite.svg', '#sprite-logo') %>"></use>
+            </svg>
+        </h1>
+        <ul class="nav">
+            <li class="menu-item menu-item--file">
+                <label for="file">
+                    <svg>
+                        <title>Choose Image</title>
+                        <use xlink:href="<%= svgSprite('/assets/svg/sprite.svg', '#sprite-image') %>"></use>
+                    </svg>
+                    <input type="file" name="file" id="file">
+                </label>
+            </li>
+            <li class="menu-item menu-item--name">
+                <label for="name">
+                    <svg>
+                        <title>Type Your Name</title>
+                        <use xlink:href="<%= svgSprite('/assets/svg/sprite.svg', '#sprite-name') %>"></use>
+                    </svg>
+                </label>
+            </li>
+            <li class="menu-item menu-item--download">
+                <label for="download">
+                    <a id="download" href="#" download="oimys.jpg">
+                        <svg>
+                            <title>Download</title>
+                            <use xlink:href="<%= svgSprite('/assets/svg/sprite.svg', '#sprite-download') %>"></use>
+                        </svg>
+                    </a>
+                </label>
+            </li>
+        </ul>
+    </div>
+</header>
