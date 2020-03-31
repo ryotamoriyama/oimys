@@ -9,8 +9,12 @@ $w:375px;
 html, body{
   width: 100vw;
   height: 100%;
+}
+
+body {
   font-family: "Helvetica Neue", sans-serif;
   font-weight: bold;
+  background: #bbbbbb;
 }
 
 ul {
@@ -58,7 +62,6 @@ h1 svg {
   width: $w;
   margin: 0 auto;
   position: relative;
-  background: #bbbbbb;
   height: calc(100% - 60px);
 }
 
