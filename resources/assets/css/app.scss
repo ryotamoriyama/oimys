@@ -101,12 +101,13 @@ howto step
   height: 30px;
   margin-right: 20px;
   svg {
-    height: 55px;
+    height: 50px;
   }
 }
 
 .step-heading {
-  font-size: 18px;
+  font-size: 16px;
+  text-decoration: underline;
 }
 
 .step-text {
