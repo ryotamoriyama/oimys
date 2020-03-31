@@ -3,6 +3,9 @@ const canvas = document.getElementById('canvas');
 const download = document.getElementById("download");
 const name = document.querySelector('#js-name');
 const inputWrapper = document.querySelector('.input-wrapper');
+const privacy = document.querySelector('.privacy');
+const modal = document.querySelector('.modal');
+const close = document.querySelector('.close');
 
 const canvasWidth = 1748;
 const canvasHeight = 2472;
@@ -103,3 +106,14 @@ download.addEventListener('click', (e) => {
     const base64 = canvas.toDataURL("image/jpeg");
     document.getElementById("download").href = base64;
 });
+
+privacy.addEventListener('click',(e)=>{
+    e.preventDefault();
+    modal.classList.add('is-visible');
+});
+
+close.addEventListener('click',(e)=>{
+    e.preventDefault();
+    modal.classList.remove('is-visible');
+});
+
