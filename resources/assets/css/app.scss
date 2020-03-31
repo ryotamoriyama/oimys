@@ -61,6 +61,9 @@ h1 svg {
   font-size: 1em;
   margin-left: 20px;
   margin-top: 15px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .input-wrapper {
@@ -116,7 +119,7 @@ h1 svg {
   font-weight: bold;
   font-size: 14px;
   line-height: 30px;
-  :hover {
+  &:hover {
     cursor: pointer;
   }
 }
