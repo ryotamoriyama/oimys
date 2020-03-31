@@ -31,6 +31,11 @@ svg {
   background: #000000;
   height: 60px;
   color: #ffffff;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 199;
 }
 
 .header-content {
