@@ -6,9 +6,11 @@ $w:375px;
   box-sizing: border-box;
 }
 
-html {
+html, body{
   width: 100vw;
-  height: 100vh;
+  height: 100%;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: bold;
 }
 
 ul {
@@ -28,7 +30,7 @@ svg {
 }
 
 .header-content {
-  padding: 0 10px;
+  padding: 0 20px;
   display: flex;
   width: $w;
   margin: 0 auto;
@@ -54,9 +56,10 @@ h1 svg {
 
 .wrapper {
   width: $w;
-  height: calc(100vh - 60px);
   margin: 0 auto;
   position: relative;
+  background: #bbbbbb;
+  height: calc(100% - 60px);
 }
 
 canvas {
@@ -74,4 +77,38 @@ canvas {
 
 #file {
   display: none;
+}
+
+/*
+howto step
+ */
+.step-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  color: #ffffff;
+}
+
+.step {
+  display: flex;
+  width: 280px;
+  margin: 30px auto;
+}
+
+.step-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  svg {
+    height: 55px;
+  }
+}
+
+.step-heading {
+  font-size: 18px;
+}
+
+.step-text {
+  font-size: 24px;
 }

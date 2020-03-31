@@ -3,10 +3,53 @@ var title = 'ONLY IMAGINATION MAKES YOU STRONGER.'
 %>
 <%- include('/partials/header', { title }) -%>
 
-<main role="main">
-    <div class="wrapper">
-        <canvas id="canvas"></canvas>
+
+<div class="wrapper">
+    <div class="step-wrapper">
+        <dl class="step step--1">
+            <dt class="step-icon">
+                <svg>
+                    <title>Choose Image</title>
+                    <use xlink:href="<%= svgSprite('/assets/svg/sprite.svg', '#sprite-image') %>"></use>
+                </svg>
+            </dt>
+            <dd class="step-description">
+                <dl>
+                    <dt class="step-heading">Step.1</dt>
+                    <dd class="step-text">Choose image</dd>
+                </dl>
+            </dd>
+        </dl>
+        <dl class="step step--2">
+            <dt class="step-icon">
+                <svg>
+                    <title>Type SNS account</title>
+                    <use xlink:href="<%= svgSprite('/assets/svg/sprite.svg', '#sprite-name') %>"></use>
+                </svg>
+            </dt>
+            <dd class="step-description">
+                <dl>
+                    <dt class="step-heading">Step.2</dt>
+                    <dd class="step-text">Type SNS account</dd>
+                </dl>
+            </dd>
+        </dl>
+        <dl class="step step--3">
+            <dt class="step-icon">
+                <svg>
+                    <title>Download!</title>
+                    <use xlink:href="<%= svgSprite('/assets/svg/sprite.svg', '#sprite-download') %>"></use>
+                </svg>
+            </dt>
+            <dd class="step-description">
+                <dl>
+                    <dt class="step-heading">Step.3</dt>
+                    <dd class="step-text">Download</dd>
+                </dl>
+            </dd>
+        </dl>
     </div>
-</main>
+    <canvas id="canvas"></canvas>
+</div>
 
 <%- include('/partials/footer') -%>
