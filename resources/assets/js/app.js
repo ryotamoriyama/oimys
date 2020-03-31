@@ -42,7 +42,6 @@ const button = document.querySelector('.button');
 button.addEventListener('click',(e)=>{
     e.preventDefault();
     snsAccount = document.form.name.value;
-    console.log(snsAccount);
     inputWrapper.classList.remove('is-visible');
     canvasDraw();
 })
