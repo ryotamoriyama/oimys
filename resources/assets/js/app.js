@@ -1,14 +1,21 @@
 const file = document.getElementById('file');
 const canvas = document.getElementById('canvas');
+const download = document.getElementById("download");
+const name = document.querySelector('#js-name');
+const inputWrapper = document.querySelector('.input-wrapper');
+
 const canvasWidth = 1748;
 const canvasHeight = 2472;
 const imageMaskWidth = 1625;
 const imageMaskHeight = 2004;
 
 const img = new Image();
+let fileData;
+let uploadImgSrc = '';
+let snsAccount = '';
+
 let imageX = 0;
 let imageY = 0;
-let uploadImgSrc = '';
 
 const header = new Image();
 const footer = new Image();
@@ -20,9 +27,6 @@ canvas.height = canvasHeight;
 
 const ctx = canvas.getContext('2d');
 
-const name = document.querySelector('#js-name');
-const inputWrapper = document.querySelector('.input-wrapper');
-
 name.addEventListener('click',()=>{
     if (inputWrapper.classList.contains('is-visible')) {
         inputWrapper.classList.remove('is-visible');
@@ -31,9 +35,7 @@ name.addEventListener('click',()=>{
     }
 });
 
-let fileData;
 
-let snsAccount = '';
 const button = document.querySelector('.button');
 button.addEventListener('click',(e)=>{
     e.preventDefault();
@@ -86,9 +88,6 @@ function canvasDraw() {
         ctx.fillText("@"+snsAccount, 71, 2280);
     }
 }
-
-
-const download = document.getElementById("download");
 
 download.addEventListener('click', (e) => {
     if ( typeof fileData === "undefined" ) {
