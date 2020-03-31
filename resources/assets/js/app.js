@@ -24,10 +24,6 @@ const name = document.querySelector('#js-name');
 const inputWrapper = document.querySelector('.input-wrapper');
 
 name.addEventListener('click',()=>{
-    if ( typeof fileData === "undefined" ) {
-        alert('Choose image first.')
-        return
-    }
     if (inputWrapper.classList.contains('is-visible')) {
         inputWrapper.classList.remove('is-visible');
     } else {
@@ -55,6 +51,7 @@ function loadLocalImage(e) {
     const reader = new FileReader();
     reader.onload = function () {
         uploadImgSrc = reader.result;
+        canvasDraw();
     }
     reader.readAsDataURL(fileData);
 }
