@@ -58,6 +58,64 @@ h1 svg {
   margin-top: 15px;
 }
 
+.input-wrapper {
+  display: none;
+}
+
+.input-wrapper.is-visible {
+  display: block;
+  position: absolute;
+  top: 60px;
+  height: 80px;
+  width: 100%;
+  background: #000000;
+  z-index: 200;
+}
+
+.input {
+  width: $w;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+.input-heading {
+  font-size: 12px;
+  margin-bottom: 7px;
+}
+
+.input-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-text {
+  height: 30px;
+  width: 240px;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background: #ffffff;
+}
+
+.button {
+  appearance: none;
+  width: 80px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: #ffffff;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 30px;
+  :hover {
+    cursor: pointer;
+  }
+}
+
 .wrapper {
   width: $w;
   margin: 0 auto;

@@ -20,22 +20,43 @@ canvas.height = canvasHeight;
 
 const ctx = canvas.getContext('2d');
 
+const name = document.querySelector('#js-name');
+const inputWrapper = document.querySelector('.input-wrapper');
+
+name.addEventListener('click',()=>{
+    if ( typeof fileData === "undefined" ) {
+        alert('Choose image first.')
+        return
+    }
+    if (inputWrapper.classList.contains('is-visible')) {
+        inputWrapper.classList.remove('is-visible');
+    } else {
+        inputWrapper.classList.add('is-visible');
+    }
+});
+
+let fileData;
+
+let snsAccount = '';
+const button = document.querySelector('.button');
+button.addEventListener('click',(e)=>{
+    e.preventDefault();
+    snsAccount = document.form.name.value;
+    console.log(snsAccount);
+    inputWrapper.classList.remove('is-visible');
+    canvasDraw();
+})
+
 function loadLocalImage(e) {
-
-    const fileData = e.target.files[0];
-
+    fileData = e.target.files[0];
     if (!fileData.type.match('image.*')) {
         alert('Only image file allowed');
         return;
     }
-
     const reader = new FileReader();
-
     reader.onload = function () {
         uploadImgSrc = reader.result;
-        canvasDraw();
     }
-
     reader.readAsDataURL(fileData);
 }
 
@@ -66,14 +87,24 @@ function canvasDraw() {
         }
         ctx.fillStyle = "white";
         ctx.font = "14px sans-serif";
-        ctx.fillText("@ryotamoriyama", 71, 2280);
+        ctx.fillText("@"+snsAccount, 71, 2280);
     }
 }
 
 
 const download = document.getElementById("download");
 
-download.addEventListener('click', () => {
+download.addEventListener('click', (e) => {
+    if ( typeof fileData === "undefined" ) {
+        e.preventDefault()
+        alert('Choose image first.')
+        return
+    }
+    if ( snsAccount === "" ) {
+        e.preventDefault()
+        alert('Set your sns account')
+        return
+    }
     const base64 = canvas.toDataURL("image/jpeg");
     document.getElementById("download").href = base64;
 });
