@@ -82,7 +82,7 @@ function canvasDraw() {
             ctx.drawImage(img, 61 , 286 + imageY, imageMaskWidth, (imageMaskWidth / imgWidth) * imgHeight);
         }
         ctx.fillStyle = "white";
-        ctx.font = "14px sans-serif";
+        ctx.font = "18px sans-serif";
         ctx.fillText("@"+snsAccount, 71, 2280);
     }
 }
