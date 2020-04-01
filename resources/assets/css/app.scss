@@ -126,9 +126,9 @@ h1 svg {
 
 .wrapper {
   width: $w;
-  margin: 0 auto;
+  margin: 60px auto 24px;
   position: relative;
-  height: calc(100% - 60px);
+  height: calc(100% - 84px);
 }
 
 canvas {
