@@ -12,7 +12,6 @@ const canvasHeight = 2472;
 const imageMaskWidth = 1625;
 const imageMaskHeight = 2004;
 
-const img = new Image();
 let fileData;
 let uploadImgSrc = '';
 let snsAccount = '';
@@ -75,6 +74,7 @@ function canvasDraw() {
     ctx.rect(61, 286, imageMaskWidth, imageMaskHeight);
     ctx.clip();
 
+    const img = new Image();
     img.src = uploadImgSrc;
     img.onload = function () {
         const imgWidth = this.width;
