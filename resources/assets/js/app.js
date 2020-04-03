@@ -117,3 +117,4 @@ close.addEventListener('click',(e)=>{
     modal.classList.remove('is-visible');
 });
 
+console.log('Developed by Ryota Moriyama ( @ryotamoriyama )');
