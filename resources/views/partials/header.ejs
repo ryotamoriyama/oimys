@@ -9,6 +9,15 @@
     </script>
     <link rel="stylesheet" href="<%= mix('/assets/css/app.css') %>">
     <title><%= title %></title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://googletagmanager.com/gtag/js?id=UA-4063170-9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-4063170-9');
+    </script>
 </head>
 <body>
 <% if (process.env.NODE_ENV === 'production') { %>
